@@ -7,6 +7,8 @@ namespace LambdaExpressions
     {
         public static void Main()
         {
+            const int ActionsCount = 3;// количество действий по заданию
+
             while (true)
             {
                 Console.WriteLine("\nГенератор отчётов\n1. Вычислить процент\n2. Классифицировать процент\n3. Проверить захват внешней переменной\n4. Ошибка захвата в for\n5. Исправление захвата в for\n0. Выход");
@@ -71,7 +73,7 @@ namespace LambdaExpressions
                     {
                         List<Action> actions = new List<Action>();
 
-                        for (int i = 0; i < 3; i++)
+                        for (int i = 0; i < ActionsCount; i++)
                             actions.Add(() => Console.WriteLine(i));
 
                         Console.WriteLine("\nРезультат до исправления:");
@@ -83,7 +85,7 @@ namespace LambdaExpressions
                     {
                         List<Action> actions = new List<Action>();
 
-                        for (int i = 0; i < 3; i++)
+                        for (int i = 0; i < ActionsCount; i++)
                         {
                             int captured = i;
                             actions.Add(() => Console.WriteLine(captured));
